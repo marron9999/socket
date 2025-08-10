@@ -4,3 +4,5 @@ tomcat/lib/NOTICE
 /bthlib/.vs
 /bthlib/vs2022/x64
 /bthlib/x64
+/socket/jna/*.ini
+*.class
