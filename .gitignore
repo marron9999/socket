@@ -6,3 +6,4 @@ tomcat/lib/NOTICE
 /bthlib/x64
 /socket/jna/*.ini
 *.class
+socket/jna/BthLib.dll
