@@ -33,24 +33,29 @@ java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.client BLE {ble-nam
 - {ble-name}: Bluetoot-Name or IP-Address (ex. vs2022)
 
 <ul>
-Setting:
 
-jna\bthlib.\{ble-name\}.ini
+Setting: jna\bthlib.\{ble-name\}.ini
 
+<table><tr><td>
 [Detect]<br>
 mac=(mac-address)
+</td></tr></table>
 
 Specify mac as Ethernet adapter Bluetooth - Physical Address
 
-ex) jna\bthlib.vs2022.ini
+ex: jna\bthlib.vs2022.ini
 
+<table><tr><td>
 [Detect]<br>
 mac=(00:1B:DC:06:3E:BD)
+</td></tr></table>
 
 Inspect as ipconfig -all
 
+<table><tr><td>
 Ethernet adapter Bluetooth xxxxx:<br>
 &nbsp; &nbsp; Physical Address. . . . . . . . . : 00-1B-DC-06-3E-BD
+</td></tr></table>
 </ul>
 
 <h3>Require Software</h3>
