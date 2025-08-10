@@ -83,7 +83,7 @@ public class server {
 	}
 	
 	protected void deploy() {
-		deploy("/server", "../server/WebContent");
+		deploy("/webapp", "../webapp/WebContent");
 	}
 	
 	public static void main(String[] args) {
