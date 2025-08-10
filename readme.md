@@ -1,14 +1,12 @@
 <h2>Socket</h2>
 
-<div class=server>
+Controlling the Command Prompt on a Windows PC.
 
-<table style='border:0;'><tr>
-<td>Client (Windows 11) - Connect (BLE socket) to VS2022</td>
-<td nowrap>-&gt;</td>
-<td>Server (VS2022 : Windows 10)</td>
+<table border=0><tr>
+<th>Client (Windows 11) : Connect (BLE socket) to VS2022</th>
+<th> Server (VS2022 : Windows 10)</th>
 </tr><tr>
 <td valign=top><img src=img/client.png /></td>
-<td>&nbsp;</td>
 <td valign=top><img src=img/server.png /></td>
 </tr></table>
 
