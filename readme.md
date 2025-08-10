@@ -1,19 +1,31 @@
 <h2>Socket</h2>
 
+<div class=server>
+
+<table style='border:0;'><tr>
+<td>Client (Windows 11) - Connect (BLE socket) to VS2022</td>
+<td nowrap>-&gt;</td>
+<td>Server (VS2022 : Windows 10)</td>
+</tr><tr>
+<td valign=top><img src=img/client.png /></td>
+<td>&nbsp;</td>
+<td valign=top><img src=img/server.png /></td>
+</tr></table>
+
 <h3>Execute : Server mode</h3>
 
-java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.server [port-number]
+java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.server \[port-number\]
 
 - jna folder: Copy jna jar files, swt jar file, and bthlib.dll (build bthlib with VS2022)
-- [port-number]: (defualt) 9999
+- \[port-number\]: (defualt) 9999
 
 <h3>Execute : Client mode (socket)</h3>
 
-java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.client {server-name} [port-number]
+java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.client \{server-name\} \[port-number\]
 
 - jna folder: Copy jna jar files, swt jar file, and bthlib.dll (build bthlib with VS2022)
-- {server-name}: Host-Name or IP-Address (ex. vs2022)
-- [port-number]: 9999 (defualt) 
+- \{server-name\}: Host-Name or IP-Address (ex. vs2022)
+- \[port-number\]: 9999 (defualt) 
 
 <h3>Execute : Client mode (BLE socket)</h3>
 
@@ -25,7 +37,7 @@ java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.client BLE {ble-nam
 <ul>
 Setting:
 
-jna\bthlib.{ble-name}.ini
+jna\bthlib.\{ble-name\}.ini
 
 [Detect]<br>
 mac=(mac-address)
