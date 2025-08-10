@@ -1,0 +1,13 @@
+﻿LIBRARY
+EXPORTS
+	BthSocket		@1
+	BthCallback		@2
+	BthConnect		@3
+	BthAccept		@4
+	BthSend			@5
+	BthRecv			@6
+	BthClose		@7
+
+	DefProfile		@10
+	GetProfile		@11
+	SetProfile		@12
