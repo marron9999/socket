@@ -1,0 +1,5 @@
+jna-5.14.0.zip
+
+         1,369,287 jna-platform.jar
+         1,878,533 jna.jar
+           107,153 win32-x86-64.jar

@@ -1,0 +1,6 @@
+*.jar
+tomcat/lib/LICENSE
+tomcat/lib/NOTICE
+/bthlib/.vs
+/bthlib/vs2022/x64
+/bthlib/x64
