@@ -295,6 +295,7 @@ public class client extends _logger {
 							isr2 = new InputStreamReader(fis, ENCODE);
 							br2 = new BufferedReader(isr2);
 							bPrompt = true;
+							reciver.send("\n");
 							continue;
 						}
 					}
@@ -302,6 +303,7 @@ public class client extends _logger {
 				{
 					log_time();
 					log_println(line);
+					client_print(line + "\n");
 					reciver.send(line + "\n");
 				}
 				//if(line.equalsIgnoreCase("exit"))

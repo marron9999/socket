@@ -41,16 +41,16 @@ Setting: jna\bthlib.\{ble-name\}.ini
 mac=(mac-address)
 </td></tr></table>
 
-Specify mac as Ethernet adapter Bluetooth - Physical Address
+mac-address must set example format and value of "Ethernet adapter Bluetooth - Physical Address"
 
-ex: jna\bthlib.vs2022.ini
+EX: jna\bthlib.vs2022.ini
 
 <table><tr><td>
 [Detect]<br>
 mac=(00:1B:DC:06:3E:BD)
 </td></tr></table>
 
-Inspect as ipconfig -all
+IMSPECT: ipconfig -all
 
 <table><tr><td>
 Ethernet adapter Bluetooth xxxxx:<br>
@@ -60,17 +60,17 @@ Ethernet adapter Bluetooth xxxxx:<br>
 
 <h3>Built-in operations : Client mode</h3>
 
-(1) #download \[folder\]
+(1) #download \[ folder-path \]
 
 Display/Specify download folder
 
-ex: #download c:\\temp
+EX: #download c:\\temp
 
 (2) @download file-mask
 
 Download server side current folder files wihich matched file-mask to client side download folder
 
-ex: @download *.log
+EX: @download *.log
 
 <table border=0><tr>
 <td valign=top><img src=img/download.png /></td>
@@ -80,48 +80,73 @@ ex: @download *.log
 
 Upload client side files which matched file-mask to server side current folder
 
-ex: @upload c:\\temp\\*.dat
+EX: @upload c:\\temp\\*.dat
 
 <table border=0><tr>
 <td valign=top><img src=img/upload.png /></td>
 </tr></table>
 
-(4) @sysmon \[on|off|true|false\]
+(4) @sysmon \[ on | off | true | false \]
 
 Enable/Disable system monitor
 
-ex: @sysmon on
+EX: @sysmon on
 
 <table border=0><tr>
 <td valign=top><img src=img/sysmon.png /></td>
 </tr></table>
 
-(5) #appmon \[{add|del} app-mask\]
+(5) #appmon \[ {add|del} app-mask \]
 
 Add/Delete app-mask for application monitor
 
-ex: #appmon add java*
+EX: #appmon add java*
 
-(6) @appmon \[on|off|true|false\]
+(6) @appmon \[ on | off | true | false \]
 
 Enable/Disable application monitor
 
-ex: @appmon on
+EX: @appmon on
 
 <table border=0><tr>
 <td valign=top><img src=img/appmon.png /></td>
 </tr></table>
 
-(7) @screen \[on|off|true|false\]
+(7) @screen \[ on | off | true | false \]
 
 Show/Hide server side command prompt window
 
-ex: @screen on
+EX: @screen on
 
-note: When execute as Server mode with /screen switch, show server side command prompt window at connect from Client mode
+NOTE: When execute as Server mode with /screen switch, show server side command prompt window at connect from Client mode
 
 <table border=0><tr>
 <td valign=top><img src=img/screen.png /></td>
+</tr></table>
+
+(8) @print \[ screen-number \]
+
+Download screen shot of screen number 0 or more
+
+EX: @print 0
+
+(9) @{file-path}
+
+Execute command list in text file
+
+NOTE: Command list must described by code page MS932
+
+EX: @c:\\temp\\cmd.txt
+
+<table><tr>
+<td>chcp 437<br>
+cd /d c:\\temp<br>
+dir /w<br>
+exit</td>
+</tr></table>
+
+<table border=0><tr>
+<td valign=top><img src=img/cmdlist.png /></td>
 </tr></table>
 
 <h3>Require Software</h3>

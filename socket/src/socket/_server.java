@@ -206,20 +206,24 @@ public class _server extends _logger implements Runnable {
 
 							if(m0.equalsIgnoreCase("@print")) {
 								server_debug(socket_name(socket) + m0 + " " + m1);
-								{
+								try {
 									int no = 0;
 									try { no = Integer.parseInt(m1); } catch (Exception e) { }
 									dsplib lib = new dsplib();
 									byte[] buf = lib.capture(no);
-									SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-									Date tm = new Date();
-									String fn = "display" + no + "_" + sdf.format(tm) + ".png"; 
-									byte[] bf1 = file_to_zip(fn, tm.getTime(), buf);
-									file_to_socket(socket, fn, buf.length, tm.getTime(), bf1);
+									if(buf != null) {
+										SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+										Date tm = new Date();
+										String fn = "display" + no + "_" + sdf.format(tm) + ".png"; 
+										byte[] bf1 = file_to_zip(fn, tm.getTime(), buf);
+										file_to_socket(socket, fn, buf.length, tm.getTime(), bf1);
+									}
+								} catch (Exception e) {
+									// NONE
 								}
 								try {
-									byte[] buf = { 0x1c };
-									socket.write(buf, 1);
+									byte[] bf2 = { 0x1c };
+									socket.write(bf2, 1);
 								} catch (Exception e) {
 									// NONE
 								}

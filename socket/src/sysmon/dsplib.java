@@ -66,7 +66,8 @@ public class dsplib {
 
 	public byte[] capture(int dn) {
 		if(dn < 0) dn = 0;
-		if(dn < miex.length) {
+		if(dn < miex.length
+		&& miex[dn] != null) {
 			try {
 				java.awt.Rectangle rc = new java.awt.Rectangle();
 				rc.x = miex[dn].rcMonitor.left;
