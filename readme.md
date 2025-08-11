@@ -58,7 +58,7 @@ Ethernet adapter Bluetooth xxxxx:<br>
 </td></tr></table>
 </ul>
 
-<h3>Operation : Client mode</h3>
+<h3>Built-in operations : Client mode</h3>
 
 (1) #download \[folder\]
 
@@ -68,15 +68,23 @@ ex: #download c:\\temp
 
 (2) @download file-mask
 
-Download server side current files wihich matched file-mask to client side download folder
+Download server side current folder files wihich matched file-mask to client side download folder
 
 ex: @download *.log
 
+<table border=0><tr>
+<td valign=top><img src=img/download.png /></td>
+</tr></table>
+
 (3) @upload file-mask
 
-Upload files which matched file-mask to server side current folder
+Upload client side files which matched file-mask to server side current folder
 
 ex: @upload c:\\temp\\*.dat
+
+<table border=0><tr>
+<td valign=top><img src=img/upload.png /></td>
+</tr></table>
 
 (4) @sysmon \[on|off|true|false\]
 

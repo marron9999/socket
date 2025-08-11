@@ -76,7 +76,7 @@ public class _reciver extends _runnable {
 		}
 		if(m0.equalsIgnoreCase("@upload")) {
 			//server_debug(socket_name(socket) + m1);
-			String fn = m1.substring(p).trim();
+			String fn = m1.trim();
 			if(fn.startsWith("\"")) {
 				fn = fn.substring(1);
 				p = fn.indexOf("\"");
