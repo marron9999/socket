@@ -182,7 +182,7 @@ public class _server extends _logger implements Runnable {
 								if(m1.equalsIgnoreCase("off")) _command.screen = false;
 								if(m1.equalsIgnoreCase("true")) _command.screen = true;
 								if(m1.equalsIgnoreCase("false")) _command.screen = false;
-								m1 = "@SCREEN は " + _command.screen  + " です。";
+								m1 = "@SCREEN is " + _command.screen  + ".";
 								try {
 									byte[] buf = (m1 + "\n").getBytes("ms932");
 									socket.write(buf);
@@ -283,7 +283,7 @@ public class _server extends _logger implements Runnable {
 										s.stop = true;
 									}
 								}
-								m1 = "@SYSMON は " + (sysmon != null) + " です。";
+								m1 = "@SYSMON is " + (sysmon != null) + ".";
 								try {
 									byte[] buf = (m1 + "\n").getBytes("ms932");
 									socket.write(buf);
@@ -310,7 +310,7 @@ public class _server extends _logger implements Runnable {
 										s.stop = true;
 									}
 								}
-								m1 = "@APPMON は " + (appmon != null) + " です。";
+								m1 = "@APPMON is " + (appmon != null) + ".";
 								try {
 									byte[] buf = (m1 + "\n").getBytes("ms932");
 									socket.write(buf);
@@ -336,7 +336,7 @@ public class _server extends _logger implements Runnable {
 								}
 								bthlib.DefProfile(host);
 								bthlib.SetProfile("appmon", "mask", appmon_mask);
-								m1 = "#APPMON は " + appmon_mask + " です。";
+								m1 = "#APPMON is \"" + appmon_mask + "\".";
 								try {
 									byte[] buf = (m1 + "\n").getBytes("ms932");
 									socket.write(buf);

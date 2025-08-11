@@ -118,10 +118,10 @@ public class app extends info {
 			if(app[i] == null) {
 				app[i] = new info((char)('a'+i), MAX_APP);
 			}
-			app[i].label[NAME] = id + " 名前";
-			app[i].label[JAVA] = id + " 情報";
-			app[i].label[USED] = id + " 利用";
-			app[i].label[WORK] = id + " サイズ";
+			app[i].label[NAME] = id + " Name";
+			app[i].label[JAVA] = id + " Info";
+			app[i].label[USED] = id + " Used";
+			app[i].label[WORK] = id + " Size";
 			app[i].value[NAME] = n;
 			app[i].value[JAVA] = j;
 			app[i].value[USED] = u + "%\f" + u;

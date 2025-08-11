@@ -36,11 +36,11 @@ public class dsp extends info {
 				}
 				if(dsp[no] == null) {
 					dsp[no] = new info((char)('0' + no), MAX_DSP);
-					dsp[no].label[NAME] = "モニタ" + (char)('0' + no) + " 名前";
-					dsp[no].label[RECT] = "モニタ" + (char)('0' + no) + " 矩形";
-					dsp[no].label[WORK] = "モニタ" + (char)('0' + no) + " 作業";
-					dsp[no].label[V_HZ] = "モニタ" + (char)('0' + no) + " 垂直";
-					dsp[no].label[ADPT] = "モニタ" + (char)('0' + no) + " アダプタ";
+					dsp[no].label[NAME] = "Monitor " + (char)('0' + no) + " Name";
+					dsp[no].label[RECT] = "Monitor " + (char)('0' + no) + " Rect";
+					dsp[no].label[WORK] = "Monitor " + (char)('0' + no) + " Work";
+					dsp[no].label[V_HZ] = "Monitor " + (char)('0' + no) + " Vert";
+					dsp[no].label[ADPT] = "Monitor " + (char)('0' + no) + " Adaptor";
 				}
 
 //		        boolean isPrimary = (info.dwFlags & WinUser.MONITORINFOF_PRIMARY) != 0;

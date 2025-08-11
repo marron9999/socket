@@ -18,28 +18,28 @@ public class cpu extends info {
 	//private WinBase.FILETIME k1;
 	//private WinBase.FILETIME u1;
 
-	private static final int CPU = 0;	// CPU使用率
-	private static final int NAME = 1;	// プロセッサー名
-	private static final int CLOCK = 2;	// クロック
-	private static final int LGCPU = 3;	// プロセッサー数
-	private static final int CORE = 4;	// コア数
-	private static final int MEM = 5;	// メモリ使用率;
-	private static final int SIZE = 6;	// メモリ量
-	private static final int PROC = 7;	// プロセス数
-	private static final int HNDL = 8;	// ハンドル数
+	private static final int CPU = 0;
+	private static final int NAME = 1;
+	private static final int CLOCK = 2;
+	private static final int LGCPU = 3;
+	private static final int CORE = 4;
+	private static final int MEM = 5;
+	private static final int SIZE = 6;
+	private static final int PROC = 7;
+	private static final int HNDL = 8;
 	private static final int MAX = HNDL+ 1;
 	
 	public cpu() {
 		super('#', MAX);
-		label[CPU  ] = "CPU使用率";
-		label[CLOCK] = "クロック";
-		label[CORE ] = "コア数";
-		label[LGCPU] = "プロセッサ数";
-		label[NAME ] = "CPU名";
-		label[MEM  ] = "メモリ使用率";
-		label[SIZE ] = "メモリ量";
-		label[PROC ] = "プロセス数";
-		label[HNDL ] = "ハンドル数";
+		label[CPU  ] = "CPU Used";
+		label[CLOCK] = "Clock";
+		label[CORE ] = "Core";
+		label[LGCPU] = "Processer";
+		label[NAME ] = "CPU Name";
+		label[MEM  ] = "Mem Used";
+		label[SIZE ] = "Mem Total";
+		label[PROC ] = "Process";
+		label[HNDL ] = "Handle";
 		
 		//i1 = new WinBase.FILETIME();
 		//k1 = new WinBase.FILETIME();

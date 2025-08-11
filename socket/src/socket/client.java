@@ -182,7 +182,7 @@ public class client extends _logger {
 					if(m1 != null && m1.length() > 0) {
 						fn = file_download_path(m1);
 					}
-					file_from_socket_print("ダウンロード先: " + fn);
+					file_from_socket_print("Download to: " + fn);
 					return true;
 				}
 				if(m0.equalsIgnoreCase("@sysmon")) {

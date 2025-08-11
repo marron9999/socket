@@ -53,11 +53,11 @@ public class drv extends info {
 			int d = Kernel32.INSTANCE.GetDriveType(n);
 			String s = null;
 			switch(d) {
-			case 2: s = "リムーバブルメディア"; break;
-			case 3: s = "ハードディスク"; break;
-			case 5: s = "CD-ROMドライブ"; break;
-			case 6: s = "RAMディスク"; break;
-			case 4: s = "ネットワークドライブ";
+			case 2: s = "Removable"; break;
+			case 3: s = "Hard Disk"; break;
+			case 5: s = "CD-ROM"; break;
+			case 6: s = "RAM Disk"; break;
+			case 4: s = "Network";
 				try {
 					Pointer p = new Memory(256);
 					IntByReference sz = new IntByReference(256);
@@ -76,10 +76,10 @@ public class drv extends info {
 			}
 			if(drv[i] == null) {
 				drv[i] = new info((char)('A'+i), MAX_DRV);
-				drv[i].label[NAME ] = n + " ラベル";
-				drv[i].label[TYPE ] = n + " 種別";
-				drv[i].label[USED ] = n + " 利用";
-				drv[i].label[SPACE] = n + " 容量";
+				drv[i].label[NAME ] = n + " Label";
+				drv[i].label[TYPE ] = n + " Type";
+				drv[i].label[USED ] = n + " Used";
+				drv[i].label[SPACE] = n + " Total";
 			}
 			drv[i].value[NAME] = "";
 			char volName[] = new char[256], fsName[] = new char[256];
