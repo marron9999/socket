@@ -12,6 +12,8 @@ Controlling the Command Prompt on a Windows PC.
 
 <h3>Execute : Server mode</h3>
 
+cd {socket project folder}<br>
+set LOG=..\logs<br>
 java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.server \[port-number\]
 
 - jna folder: Copy jna jar files, swt jar file, and bthlib.dll (build bthlib with VS2022)
@@ -19,6 +21,8 @@ java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.server \[port-numbe
 
 <h3>Execute : Client mode (socket)</h3>
 
+cd {socket project folder}<br>
+set LOG=..\logs<br>
 java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.client \{server-name\} \[port-number\]
 
 - jna folder: Copy jna jar files, swt jar file, and bthlib.dll (build bthlib with VS2022)
@@ -27,6 +31,8 @@ java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.client \{server-nam
 
 <h3>Execute : Client mode (BLE socket)</h3>
 
+cd {socket project folder}<br>
+set LOG=..\logs<br>
 java -Djdk.attach.allowAttachSelf=true -cp bin;jna\\* socket.client BLE {ble-name}
 
 - jna folder: Copy jna jar files, swt jar file, and bthlib.dll (build bthlib with VS2022)

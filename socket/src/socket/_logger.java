@@ -9,7 +9,12 @@ public class _logger extends _base {
 	protected String logfile;
 	private StringBuffer logbuf = new StringBuffer();
 	protected long logsize = 2L * 1024L * 1024L;
-	private static final String BASE = "%DEV%\\logs";
+	private static String BASE = ".";
+	static {
+		String v1 = "%LOG%";
+		String v2 = EDIT(v1);
+		if( ! v1.equalsIgnoreCase(v2)) BASE = v2;
+	}
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
 
 	public _logger(String filename) {

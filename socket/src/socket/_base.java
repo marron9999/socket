@@ -35,29 +35,34 @@ public class _base {
 		//service = Executors.newCachedThreadPool();
 	}
 
-	protected String EDIT(String path) {
-		if(path.indexOf("%") < 0) return path;
-		String[] paths = path.replace("%", "\t").split("\t");
-		boolean update = false;
-		for(int i=0; i<paths.length; i++) {
-			if(paths[i] == null) {
-				paths[i] = "";
+	protected static String EDIT(String path) {
+		int p = path.indexOf("%");
+		while(p >= 0) {
+			if(p < 0) return path;
+			int q = path.indexOf("%", p + 1);
+			if(q < 0) return path;
+			String s = path.substring(p + 1, q);
+			if(s.length() <= 0) {
+				p = path.indexOf("%", q + 1);
 				continue;
 			}
-			if(paths[i].length() <= 0) continue;
-			if(paths[i].indexOf(" ") >= 0) continue;
-			String v = System.getenv(paths[i]); 
-			if(v == null) v = System.getenv(paths[i].toLowerCase()); 
-			if(v == null) v = System.getenv(paths[i].toUpperCase()); 
-			if(v == null) v = System.getProperty(paths[i]); 
-			if(v == null) v = System.getProperty(paths[i].toLowerCase()); 
-			if(v == null) v = System.getProperty(paths[i].toUpperCase()); 
-			if(v == null) continue; 
-			paths[i] = v;
-			update = true;
+			String v = System.getenv(s); 
+			if(v == null) v = System.getenv(s.toLowerCase()); 
+			if(v == null) v = System.getenv(s.toUpperCase()); 
+			if(v == null) v = System.getProperty(s); 
+			if(v == null) v = System.getProperty(s.toLowerCase()); 
+			if(v == null) v = System.getProperty(s.toUpperCase()); 
+			if(v == null) {
+				p = path.indexOf("%", q + 1);
+				continue; 
+			}
+			String z = path.substring(q + 1);
+			path = path.substring(0, p) + v;
+			p = path.length();
+			path += z;
+			p = path.indexOf("%", p);
 		}
-		if( !update ) return path;
-		return String.join("", paths);
+		return path;
 	}
 
 	protected int buftoi(byte[] buf, int ix, long[] val, int len) {
