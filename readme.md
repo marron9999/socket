@@ -88,7 +88,7 @@ ex: @upload c:\\temp\\*.dat
 
 (4) @sysmon \[on|off|true|false\]
 
-Enable/Disable of system monitor
+Enable/Disable system monitor
 
 ex: @sysmon on
 
@@ -104,12 +104,24 @@ ex: #appmon add java*
 
 (6) @appmon \[on|off|true|false\]
 
-Enable/Disable of application monitor
+Enable/Disable application monitor
 
 ex: @appmon on
 
 <table border=0><tr>
 <td valign=top><img src=img/appmon.png /></td>
+</tr></table>
+
+(7) @screen \[on|off|true|false\]
+
+Show/Hide server side command prompt window
+
+ex: @screen on
+
+note: When execute as Server mode with /screen switch, show server side command prompt window at connect from Client mode
+
+<table border=0><tr>
+<td valign=top><img src=img/screen.png /></td>
 </tr></table>
 
 <h3>Require Software</h3>

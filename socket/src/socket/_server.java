@@ -178,10 +178,20 @@ public class _server extends _logger implements Runnable {
 
 							if(m0.equalsIgnoreCase("@screen")) {
 								server_debug(socket_name(socket) + m0 + " " + m1);
-								if(m1.equalsIgnoreCase("on")) _command.screen = true;
-								if(m1.equalsIgnoreCase("off")) _command.screen = false;
-								if(m1.equalsIgnoreCase("true")) _command.screen = true;
-								if(m1.equalsIgnoreCase("false")) _command.screen = false;
+								if(m1.equalsIgnoreCase("on")
+								|| m1.equalsIgnoreCase("true")) {
+									if( ! _command.screen) {
+										command.console_open();
+									}
+									_command.screen = true;
+								}
+								if(m1.equalsIgnoreCase("off")
+								|| m1.equalsIgnoreCase("false") ) {
+									if(_command.screen) {
+										command.console_close();
+									}
+									_command.screen = false;
+								}
 								m1 = "@SCREEN is " + _command.screen  + ".";
 								try {
 									byte[] buf = (m1 + "\n").getBytes("ms932");

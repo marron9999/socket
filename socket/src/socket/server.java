@@ -12,13 +12,13 @@ public class server {
 		try {
 			int port = 9999;
 			for(int i = 0; i<args.length; i++) {
-				if(args[i].equalsIgnoreCase("/console")
-				|| args[i].equalsIgnoreCase("-console")) {
+				if(args[i].equalsIgnoreCase("/screen")
+				|| args[i].equalsIgnoreCase("-screen")) {
 					_command.screen = true;
 					continue;
 				}
 				try { port = Integer.parseInt(args[i]); } catch (Exception e) { }
-				break;
+				//break;
 			}
 			_net = new _server("serv_net", port) {
 				@Override

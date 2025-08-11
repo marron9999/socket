@@ -34,19 +34,7 @@ public class _command extends _runnable {
 		t.start();
 	
 		if(screen) {
-			try {
-				console_socket = _screen.open(name.split(" ")[0]);
-				if(console_socket != null) {
-					console_stream = new PrintStream(console_socket.getOutputStream(), true, ENCODE);
-					//String host = console_socket.getInetAddress().getHostName();
-					//host += ":" + console_socket.getPort();
-					//println("コンソール " + host + " に接続しました");
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-				this.console_socket = null;
-				this.console_stream = null;
-			}
+			console_open();
 		}
 
 		try {
@@ -65,6 +53,34 @@ public class _command extends _runnable {
 		}
 	}
 
+	protected void console_open() {
+		if(console_socket == null) {
+			try {
+				console_socket = _screen.open(name.split(" ")[0]);
+				if(console_socket != null) {
+					console_stream = new PrintStream(console_socket.getOutputStream(), true, ENCODE);
+					//String host = console_socket.getInetAddress().getHostName();
+					//host += ":" + console_socket.getPort();
+					//println("コンソール " + host + " に接続しました");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				this.console_socket = null;
+				this.console_stream = null;
+			}
+		}
+	}
+	protected void console_close() {
+		try {
+			if(console_socket != null)
+				console_socket.close();
+		} catch (Exception e) {
+			// NONE
+		}
+		console_socket = null;
+		console_stream = null;
+	}
+	
 	@Override
 	protected int onClose() {
 		command_debug("- onClose -");
@@ -74,14 +90,7 @@ public class _command extends _runnable {
 	protected void close() {
 		command_debug("- close -");
 		cpumon.stop = true;
-		try {
-			if(console_socket != null)
-				console_socket.close();
-			console_socket = null;
-			console_stream = null;
-		} catch (Exception e) {
-			// NONE
-		}
+		console_close();
 		try {
 			if(ps != null)
 				ps.close();
