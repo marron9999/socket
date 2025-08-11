@@ -78,7 +78,7 @@ Upload files which matched file-mask to server side current folder
 
 ex: @upload c:\\temp\\*.dat
 
-(4) @sysmon \[on|off\true|false\]
+(4) @sysmon \[on|off|true|false\]
 
 Enable/Disable of system monitor
 
@@ -94,7 +94,7 @@ Add/Delete app-mask for application monitor
 
 ex: #appmon add java*
 
-(6) @appmon \[on|off\true|false\]
+(6) @appmon \[on|off|true|false\]
 
 Enable/Disable of application monitor
 

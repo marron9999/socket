@@ -336,7 +336,7 @@ public class _server extends _logger implements Runnable {
 								}
 								bthlib.DefProfile(host);
 								bthlib.SetProfile("appmon", "mask", appmon_mask);
-								m1 = "#APPMON is \"" + appmon_mask + "\".";
+								m1 = "#APPMON is \"" + appmon_mask.trim() + "\".";
 								try {
 									byte[] buf = (m1 + "\n").getBytes("ms932");
 									socket.write(buf);
